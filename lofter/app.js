@@ -14,6 +14,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//路由
+app.get('/',routes.index);
+app.get('/u/:user',routes.user);
+app.post('/post',routes.post);
+app.get('/reg', routes.reg);
+app.post('/reg',routes.doReg);
+app.get('/login', routes.login);
+app.post('/login',routes.doLogin);
+app.get('/logout',routes.logout);
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
